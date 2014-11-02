@@ -230,9 +230,9 @@ def testForFileName(argv):
         else:
             return infile
 # PrintStandardXML('AFPD0001_Cubify.XML')
-WriteStandardXML('AFPD0001_Cubify.XML','AFPD0001_Standard.XML')
-#input = testForFileName(sys.argv)
-#if input != -1:
-#    WriteStandardXML(input,'AFPD0001_Standard.XML')
-#else:
-#    print "File Not Found!"
+#WriteStandardXML('AFPD0001_Cubify.XML','AFPD0001_Standard.XML')
+input = testForFileName(sys.argv)
+if input != -1:
+    WriteStandardXML(input,'AFPD0001_Standard.XML')
+else:
+    print "File Not Found!"
