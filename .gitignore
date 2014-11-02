@@ -5,3 +5,5 @@
 *.gz
 /BOMDocumentGenerator/images_old/*.gif
 /BOMDocumentGenerator/images_old/*.mov
+*.bak
+/BOMDocumentGenerator/*.bak
