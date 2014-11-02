@@ -1,0 +1,1 @@
+{"s1":{"qrdata":[{"x":430,"y":400.5,"text":"http://delta.firepick.org"}]}}

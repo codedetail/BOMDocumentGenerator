@@ -1,0 +1,7 @@
+*.md
+*.XML
+*.png
+/BOMDocumentGenerator/images_old/*.jpg
+*.gz
+/BOMDocumentGenerator/images_old/*.gif
+/BOMDocumentGenerator/images_old/*.mov

@@ -1,0 +1,57 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<product Version = "1.0">
+	<toplevel>
+		<item_identifier>AFPD0001</item_identifier>
+		<description>Extrusion, nuts (pre-insertion)</description>
+		<manufacturer>firepick-delta</manufacturer>
+		<url>http://delta.firepick.org/</url>
+	</toplevel>
+	<item>
+		<item_identifier>XE2020-260</item_identifier>
+		<item_type>Part</item_type>
+		<dependencies>None</dependencies>
+		<description>Extrusion, frame, top/bottom</description>
+		<part_number>HFS5-2020-260</part_number>
+		<total_qty>8</total_qty>
+		<price>$3.03</price>
+		<total_price>$24.24</total_price>
+		<distrib>Misumi</distrib>
+		<manufacturer>Not Available</manufacturer>
+		<url>http://www.misumiusa.com/market-leader/?mkwid=sw4vtgXim&pcrid=40073305420&kw=mitsumi&mt=b&utm_source=google&utm_medium=cpc&utm_term=mitsumi&utm_content=40073305420&utm_campaign=GRS_MISUMI_AMS_US_EN_B_BRD_Misumi&lisid=lisid_google_111107_w4vtgXim</url>
+		<notes>Frame</notes>
+		<subcomponent_of>
+				<item>
+					<item_identifier>AD0001</item_identifier>
+					<item_type>Assembly</item_type>
+					<qty>8</qty>
+				</item>
+		</subcomponent_of>
+	</item>
+	<item>
+			<item_identifier>AD0001</item_identifier>
+			<item_type>Assembly</item_type>
+			<description>Frame</description>
+	  	<part_number>Not Available</part_number>
+			<dependencies>Not Available</dependencies>
+			<price>$43.00</price>
+			<qty>1</qty>
+			<total_price>%43.00</total_price>
+			<distrib>FirePick Delta</distrib>
+			<manufacturer>FirePick Delta</manufacturer>
+			<url>http://delta.firepick.org/</url>
+			<notes>None</notes>
+			<subcomponent>
+				<item>
+						<item_identifier>XE2020-260</item_identifier>
+						<item_type>Part</item_type>
+						<qty>8</qty>
+				</item>
+				<item>
+						<item_identifier>XEB505</item_identifier>
+						<item_type>Part</item_type>
+						<qty>16</qty>
+				</item>
+			</subcomponent>
+	</item>
+</product>
+
