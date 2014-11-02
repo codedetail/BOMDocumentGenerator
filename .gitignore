@@ -7,3 +7,5 @@
 /BOMDocumentGenerator/images_old/*.mov
 *.bak
 /BOMDocumentGenerator/*.bak
+/*.sln
+/*.suo
