@@ -1,7 +1,44 @@
+# -*- coding: utf-8; -*-
+#
+# This file is part of BOM Document Generator Tool.
+#
+# This tool is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# MMC is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+#The MIT License (MIT)
 
+#Copyright (c) 2014 firepick
+
+# (c) 2014 firepick-delta, http://delta.firepick.org/
+# Author: David Shanklin, http://www.sagesmithing.org
+
+#Permission is hereby granted, free of charge, to any person obtaining a copy
+#of this software and associated documentation files (the "Software"), to deal
+#in the Software without restriction, including without limitation the rights
+#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#copies of the Software, and to permit persons to whom the Software is
+#furnished to do so, subject to the following conditions:
+
+#The above copyright notice and this permission notice shall be included in all
+#copies or substantial portions of the Software.
+
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#SOFTWARE.
+
+# These utilities are used to support GitHub Flavored Markdown (GFM for short)
 
 import re
 import os
+import sys
 
 # convert Cubify drawing to readiable XML file format
 from xml.etree.ElementTree import Element, SubElement, Comment
@@ -117,13 +154,13 @@ def ParseItem(tree):
 def Quantity(tree, name, component):
     returnValue = 0
     if (component == True):
-        returnValue = 0
+       returnValue = 0
 
     for child in tree.iter('Node'):
         line = child.attrib
         line = line['Name']
         # print line
-        searchObj = re.search(  r'(.*) - (.*)_Config<([0-9]*?)>_([0-9]*)', line, re.M|re.I)
+        searchObj = re.search(  r'(\w*) - (.*)_Config<([0-9]*?)>_([0-9]*)', line, re.M|re.I)
         if (searchObj):
             if searchObj.group(1) == name:
                 returnValue = returnValue + 1
@@ -150,7 +187,7 @@ def ParseCubifyXMLToStandardXML(filename):
         components = CreateTopLevel(product, parsedtoplevel)
         for item in inputTopLevel.findall('.//Node'):
             parseditem = ParseItem(item)
-            print parseditem
+            #print parseditem
             #print str(parseditem['ident'])
             # if we haven't added the item to standard XML
             if (not ItemExist(components, parseditem['ident'])):
@@ -182,5 +219,20 @@ def PrintStandardXML(filename):
     product = ParseCubifyXMLToStandardXML(filename)
     print prettify(product)
 
+def testForFileName(argv): 
+    length = len(sys.argv)
+    if length < 2:
+        return -1
+    else: 
+        infile = sys.argv[1]
+        if not os.path.exists(infile):
+            return -1
+        else:
+            return infile
 # PrintStandardXML('AFPD0001_Cubify.XML')
 WriteStandardXML('AFPD0001_Cubify.XML','AFPD0001_Standard.XML')
+#input = testForFileName(sys.argv)
+#if input != -1:
+#    WriteStandardXML(input,'AFPD0001_Standard.XML')
+#else:
+#    print "File Not Found!"

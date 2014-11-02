@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>deac356e-6a83-4ad3-bd3d-98f530f8cd51</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>US00001.py</StartupFile>
+    <StartupFile>ConvertCubifyXMLtoStandardXML.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,12 +33,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ConvertCubifyXMLtoStandardXML.py" />
+    <Compile Include="Sandbox.py" />
     <Compile Include="UpdateStandardXMLwithBOM.py" />
     <Compile Include="UpdateStandardXMLwithImagesAndSketches.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UpdateStandardXMLwithMcMasterSourceURL.py" />
-    <Compile Include="US00001.py" />
+    <Compile Include="UpdateMarkdownFiles.py" />
     <Compile Include="_Test_BOMUtilitiesTest.py">
       <SubType>Code</SubType>
     </Compile>
